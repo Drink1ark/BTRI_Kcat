@@ -107,7 +107,7 @@ class CFG:
     # ensemble_seeds: Tuple[int, ...] = (37, 38, 39, 40, 41, 42, 43, 44, 45, 46)
     # ensemble_seeds: Tuple[int, ...] = (42, 43, 44, 45, 46)
     # ensemble_seeds: Tuple[int, ...] = DEFAULT_SEEDS
-    ensemble_seeds: Tuple[int, ...] = (46,)
+    ensemble_seeds: Tuple[int, ...] = (42,)
 
     device: str = "cuda" if torch.cuda.is_available() else "cpu"
     label_method: str = "standard"  # standard, robust(差), none
