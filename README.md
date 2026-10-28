@@ -19,10 +19,10 @@ BTRI-Kcat 是一个酶催化速率预测项目。模型结合蛋白质序列特�
 
 ## 环境安装
 
-建议使用 Linux、Python 3.10，并根据本机设备先安装 PyTorch 2.8.0 的 CPU 或 CUDA 构建。以下是 CPU 安装示例；GPU 用户应改用与驱动兼容的 PyTorch 构建。
+建议使用 Linux、Python 3.9，并根据本机设备先安装 PyTorch 2.8.0 的 CPU 或 CUDA 构建。以下是 CPU 安装示例；GPU 用户应改用与驱动兼容的 PyTorch 构建。
 
 ```bash
-conda create -n btrikcat python=3.10 -y
+conda create -n btrikcat python=3.9 -y
 conda activate btrikcat
 python -m pip install --upgrade pip wheel "setuptools<81"
 python -m pip install torch==2.8.0 --index-url https://download.pytorch.org/whl/cpu
@@ -50,7 +50,7 @@ python preprocess/token_preprocess.py --dataset all --turnup-data-root data/PMAK
 完成对应数据集的特征提取后，在本目录运行：
 
 ```bash
-# CatPred-DB：验证集选模；默认仅训练种子 46
+# CatPred-DB：验证集选模；默认仅训练种子 42
 python train/train_BTRIKcat_inCatpredDB.py
 
 # PMAK-DB：固定轮数训练，最终权重评估 test 与 OOD
