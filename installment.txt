@@ -1,0 +1,29 @@
+# BTRI-Kcat runtime dependencies (Linux, recommended Python 3.10).
+# Versions follow the locally import-checked Python 3.9.25 environment.
+# Install a CPU/CUDA build of torch==2.8.0 first; see README.md.
+# Then run BOTH commands for full CSV preprocessing support:
+#   python -m pip install -r installment.txt
+#   python -m pip install --no-deps rxnfp==0.1.0
+# RXNFP is intentionally separate: its metadata pins incompatible legacy
+# scipy/scikit-learn/matplotlib versions. Its inference dependencies are below.
+
+# RXNFP imports pkg_resources; newer setuptools releases remove that API.
+setuptools>=70,<81
+
+# Training, evaluation and aligned feature storage.
+torch==2.8.0
+numpy==1.26.4
+pandas==1.5.3
+scipy==1.13.1
+scikit-learn==1.6.1
+pyarrow==21.0.0
+tqdm==4.67.3
+
+# ESM2 / ChemBERTa / ProtT5 and RXNFP transformer inference.
+transformers==4.37.0
+tokenizers==0.15.2
+huggingface-hub==0.36.2
+safetensors==0.7.0
+accelerate==1.10.1
+sentencepiece==0.2.2
+rdkit-pypi==2022.9.5
